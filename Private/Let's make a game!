@@ -1,0 +1,17 @@
+Let's make a game!
+	name:Valve Clicker
+	desc:An idle game.
+	created:20/3/2018
+	updated:20/3/2018
+	version:1.0
+
+Settings
+	background:https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg
+	building cost increase:115%
+	building cost refund:%75
+
+*money
+	name:money
+	desc:Click this to get more money
+	on click:yield 1 money
+	(thingKey)
