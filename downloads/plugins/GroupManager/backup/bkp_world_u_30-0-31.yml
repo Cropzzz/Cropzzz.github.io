@@ -1,0 +1,21 @@
+users:
+  5a4407e6-def4-44f8-b3aa-6a3bc481e4e0:
+    lastname: moussaka
+    group: Moderator
+    subgroups: []
+    permissions: []
+  ElgarL:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  KHobbits:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  snowleo:
+    group: Builder
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms

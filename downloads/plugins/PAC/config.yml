@@ -1,0 +1,132 @@
+# Notifications
+notification:
+  enabled: true
+  # Send notifications to console
+  console: true
+  # Allow logging
+  log: true
+  # Format
+  format: '&c&lPAC&f: &a<player> &7failed &4<module> &7check [VL: <vl>] [Ping: <ping>] [Info: <info>]'
+  # You can block notification spam by increasing delay (1000ms = 1 second)
+  delay: 800
+
+# Messages
+messages:
+  tag: '&7[&aPAC&7] &2'
+  no-perm: '&4You dont have permission !'
+
+# Aura check
+killaura:
+  enabled: true
+  actions:
+    a: cancel::notify
+
+# Hitbox check
+hitbox:
+  enabled: true
+  actions:
+    a: cancel::notify
+
+# Limits the speed of sending command/message
+spam:
+  enabled: true
+  values:
+    # 1000ms = 1 second
+    # You can change spam message at messages.yml
+    chat:
+      delay: 1000
+    command:
+      delay: 1000
+  actions:
+    a: cancel::pacmessage &cPlease talk slowly.
+
+# Blocks unknown characters
+unknowncharacters:
+  enabled: true
+  # If you have different characters in your language, use whitelist.
+  # Example:
+  # - a
+  # - b
+  whitelist:
+  - some_different_chars_in_your_language
+  actions:
+    a: cancel::notify::pacmessage &cUnknown Characters are not allowed !
+
+# Blocks impossible angles
+headroll:
+  enabled: true
+  actions:
+    a: cancel::notify
+
+# Blocks liquid interact
+impossibleinteract:
+  enabled: true
+  actions:
+    a: cancel::notify
+
+# Checks packets
+morepackets:
+  enabled: true
+  values:
+    # Limits movement packets
+    movement:
+      # Max movement packets in 1 second
+      max_packets: 20
+  actions:
+    a: cancel::notify
+
+# Broken item NBT check
+nbt:
+  enabled: true
+  actions:
+    a: cancel::notify
+
+# InventoryMove, MoreInventory check
+inventory:
+  enabled: true
+  actions:
+    a: cancel::notify
+
+# Speed
+speed:
+  enabled: true
+  values:
+    violation:
+      # Min violations before cancelling movement
+      min_vl: 2.0
+      # Violation multiplier
+      vl_multiplier: 8.0
+  actions:
+    a: cancel::notify
+
+# Flight/Fly
+flight:
+  enabled: true
+  actions:
+    a: cancel::notify
+
+# Phase/NoClip
+phase:
+  enabled: true
+  actions:
+    a: cancel::notify
+
+# DamageIndicators/HealthESP
+damageindicators:
+  enabled: true
+
+# Limits incoming connections
+botattack:
+  enabled: true
+  values:
+    # 1000ms = 1 second
+    delay: 500
+    # Max connections in <delay>
+    max-connections: 3
+    # Use "MC|Brand" packet for whitelist
+    mc_brand: true
+    # Blacklist if connections coming from same IP
+    blacklist: true
+
+# Do not change this value !
+pac_version: 2.0.0-pre5

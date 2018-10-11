@@ -1,0 +1,67 @@
+# Group inheritance
+#
+# Any inherited groups prefixed with a g: are global groups
+# and are inherited from the GlobalGroups.yml.
+#
+# Groups without the g: prefix are groups local to this world
+# and are defined in the this groups.yml file.
+#
+# Local group inheritances define your promotion tree when using 'manpromote/mandemote'
+
+groups:
+  Moderator:
+    default: false
+    permissions: []
+    inheritance:
+    - default
+    info:
+      build: true
+      prefix: '&5[Mod]'
+      suffix: ''
+  Owner:
+    default: false
+    permissions:
+    - +vanish.effects.toggle.all
+    - -vanish.effects.*
+    - '*'
+    inheritance:
+    - admin
+    info:
+      build: true
+      prefix: '&4'
+      suffix: ''
+  Builder:
+    default: false
+    permissions: []
+    inheritance:
+    - default
+    - g:essentials_builder
+    - g:towny_builder
+    info:
+      build: true
+      prefix: '&2'
+      suffix: ''
+  Admin:
+    default: false
+    permissions: []
+    inheritance:
+    - moderator
+    - g:groupmanager_admin
+    - g:bukkit_admin
+    - g:essentials_admin
+    - g:towny_admin
+    - g:vanish_admin
+    - default
+    info:
+      build: true
+      prefix: '&c'
+      suffix: ''
+  Default:
+    default: true
+    permissions:
+    - -bukkit.command.kill
+    inheritance:
+    info:
+      build: false
+      prefix: '&e'
+      suffix: ''
